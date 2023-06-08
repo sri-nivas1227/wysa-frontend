@@ -14,7 +14,7 @@ const QFour = (focus_hours) => {
   }
   const handleSubmit = async ()=>{
     console.log(selectedOption)
-    const response = await fetch("http://127.0.0.1:5000/api/v1/sleep/assessment/sleep-hours", {
+    const response = await fetch("http://54.89.207.202/api/v1/sleep/assessment/sleep-hours", {
       method: "POST",
       mode: "cors",
       headers : {
