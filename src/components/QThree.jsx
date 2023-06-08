@@ -2,17 +2,41 @@ import arrow from '../assets/arrow-down.svg'
 import { useState } from 'react'
 import {TimePicker} from 'react-ios-time-picker'
 import QFour from './QFour'
-const QThree = () => {
-  const [value,setValue]  = useState('10:00')
+const QThree = (focus_time) => {
+  const estimated_time = focus_time.estimated_waking_time
+  const [sleepHours,setSleepHours] = useState(0)
+  const [value,setValue]  = useState(estimated_time)
   const [showNew, setshowNew] = useState(false)
   const [showCurrent, setShowCurrent] = useState(true)
   const onChange = (timeValue)=>{
     setValue(timeValue)
 
   }
-  const handleSubmit = ()=>{
-    setShowCurrent(false)
-    setshowNew(true)
+  const handleSubmit = async ()=>{
+
+    console.log(value)
+
+    const response = await fetch("http://127.0.0.1:5000/api/v1/sleep/assessment/waking-time", {
+      method: "POST",
+      mode : "cors",
+      headers :
+      {
+        "Content-Type" : "application/json",
+        "Authorization" : "Bearer " + localStorage.getItem("token")
+      },
+      body: JSON.stringify({
+        "waking-time" : value,
+      })
+    })
+    console.log(response.status)
+    if(response.status === 200)
+    {
+      const data = await response.json()
+      console.log(data)
+      setSleepHours(data.estimated_sleep_hours)
+      setShowCurrent(false)
+      setshowNew(true)
+    }
   }
   return (
       <div className="bg-[#00001d] h-screen rounded-lg text-center p-4">
@@ -23,7 +47,7 @@ const QThree = () => {
           </div>
           <div onClick={handleSubmit} id="submit" className="cursor-pointer m-4 text-center bg-yellow-400 inline-block rounded-full"><img src={arrow} className='cursor-pointer pointer-events-none w-10' alt="" /></div>
         </div>}
-        {showNew && <QFour/>}
+        {showNew && <QFour sleepHours= {sleepHours}/>}
     </div>
   )
 }
