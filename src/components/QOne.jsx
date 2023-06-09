@@ -69,7 +69,7 @@ const QOne = () => {
         <h2 className="text-white my-4">{"That's a great goal. How long have you been struggling with your sleep?"}</h2>
         <div id="options" className="flex flex-col justify-center items-center">
             <div onClick={handleClick}  className="cursor-pointer p-2 bg-[#0000ad] m-2 rounded-xl w-4/5 text-white flex justify-between">
-              <span className='pointer-events-none' id="value">Less than 2 weeks</span> <span><img id="tick" src={tick} className={`w-4 hidden, pointer-events-none`} alt="" /></span>
+              <span className='pointer-events-none' id="value">Less than 2 weeks</span> <span><img id="tick" src={tick} className={`w-4 hidden pointer-events-none`} alt="" /></span>
             </div>
             <div onClick={handleClick}  className="cursor-pointer p-2 bg-[#00007d] m-2 rounded-xl w-4/5 text-white flex justify-between">
               <span className='pointer-events-none' id="value">2 to 8 weeks</span> <span><img id="tick" src={tick} className={`w-4 hidden pointer-events-none`} alt="" /></span>
