@@ -16,10 +16,9 @@ const Login =  () => {
         console.log(userName)
         console.log(password)
 
-        const response = await fetch("http://54.89.207.202/api/v1/user/login", {
+        const response = await fetch("https://srinivasmekala.me/api/v1/user/login", {
             method: "POST",
             mode: "cors",
-            // referrerPolicy: "unsafe_url",
             headers: {
                 "Content-Type": "application/json",
             },

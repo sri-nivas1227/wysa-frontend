@@ -16,7 +16,7 @@ const QThree = (focus_time) => {
 
     console.log(value)
 
-    const response = await fetch("http://54.89.207.202/api/v1/sleep/assessment/waking-time", {
+    const response = await fetch("https://srinivasmekala.me/api/v1/sleep/assessment/waking-time", {
       method: "POST",
       mode : "cors",
       headers :
