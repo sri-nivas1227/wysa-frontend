@@ -43,7 +43,7 @@ const Login =  () => {
       }
 
   return (
-    <div className="bg-[#00001d] w-full h-screen rounded-lg text-center p-4">
+    <div className="bg-[#00001d] w-full h-full flex justify-center items-center  rounded-lg text-center p-4">
        {showCurrent && <div>  
         <div className="flex h-1/2 flex-col items-center justify-center">
                 <div className="">

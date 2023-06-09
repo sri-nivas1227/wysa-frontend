@@ -3,7 +3,7 @@ import Login from "./components/Login"
 function App() {
 
   return (
-   <div className='m-auto rounded-lg'>
+   <div className='m-auto w-full sm:w-1/2 md:w-2/5 h-screen rounded-lg'>
     <Login />
 
    </div>

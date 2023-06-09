@@ -39,7 +39,7 @@ const QFour = (focus_hours) => {
   }
 
   return (
-    <div className="bg-[#00001d] h-screen rounded-lg text-center p-4">
+    <div className="bg-[#00001d] h-full flex justify-center items-center rounded-lg text-center p-4">
         {showCurrent && <div className="">
           <h2 className="text-white my-4">{"Ok. How many hours sleep do you get in in a typical night?"}</h2>
           <div id="options" className="text-white border rounded-lg">

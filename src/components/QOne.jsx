@@ -46,7 +46,7 @@ const QOne = () => {
       method : 'POST',
       mode : 'cors',
       headers : {
-        'Content-Type' : 'application/json',
+        "Content-Type" : "application/json",
         "Authorization" : "Bearer "+localStorage.getItem('token')
       },
       body: JSON.stringify({
@@ -63,7 +63,7 @@ const QOne = () => {
     }
   }
   return (
-    <div className="bg-[#00001d] h-screen rounded-lg text-center p-4">
+    <div className="bg-[#00001d] h-full flex justify-center items-center rounded-lg text-center p-4">
       {showCurrent && <div className="">
 
         <h2 className="text-white my-4">{"That's a great goal. How long have you been struggling with your sleep?"}</h2>
